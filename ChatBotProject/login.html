@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <title>Bootstrap 101 Template</title>
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="front.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+  
+  <script type="text/javascript">
+
+	 function saveCrap()
+   {
+    	var user=document.getElementById('un').value;
+    	var pass=document.getElementById('pwd').value;
+    	var mail=document.getElementById('mail').value;
+    	var Mobile=document.getElementById('mobile').value;
+    	
+    	
+    	localStorage.setItem('user',user);
+    	localStorage.setItem('pass',pass);
+    	localStorage.setItem('mail',mail);
+    	localStorage.setItem('Mobile',mobile);
+    	
+    	
+
+      display();
+    }
+
+
+
+    function display()
+    {
+  	
+    	var user=localStorage.getItem('user');
+    	var pass=localStorage.getItem('pass');
+    	var mail=localStorage.getItem('mail');
+    	var Mobile=localStorage.getItem('Mobile');
+
+    }
+
+
+
+    function gohome()
+    {
+
+      var user=document.form2.username.value;
+      var pass=document.form2.password.value;
+
+      if(user==localStorage.getItem('user') && pass==localStorage.getItem('pass'))
+           {
+            alert("Login Successfull");
+           window.location="./chatBotfinal.html";
+            return false;
+          }
+          else{
+            alert("Login fail....");
+            window.location="./login.html";
+          }
+
+        }
+  
+</script>
+
+
+
+</head>
+
+      <body>
+
+      <div class="body-wrap">
+        <div class="container">
+          <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-brand"> </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Welcome to BotChat</a></li>
+                </ul>
+               </div>
+           </div> 
+         </nav>
+       </div>
+     </div>
+
+         <div class="page-content">
+            <div class="row">
+                <div class="col-sm-6">
+                    
+                        <h3>Create an account</h3>
+                        <p>Please enter your details to create an account.</p>
+                        <form id="form1" name="form1">
+                        
+                        <label for="user name">User name</label>
+                        <input type="text" name="username" class="form-control" id='un' size="30" style="width: 350px"  required>
+                        
+                        <label for="password">Password</label>
+                        <input name="password"  type="password" class="form-control" id='pwd' size="30" style="width: 350px" required>
+                        
+                        <label for="email">Email</label>
+                        <input name="email"  type="text" class="form-control" id='mail' size="30" style="width: 350px" >
+
+                        <label for="mobileno">Mobile no</label>
+                        <input name="mobileno"  type="text" class="form-control" id='mobile' size="30" style="width: 350px">
+
+                      
+                        <br><br><button class="btn btn-success" id="form1_btn" onclick=" return saveCrap()"> Create an account</button>
+                        </form>
+                  </div>
+            
+
+
+
+                <div class="col-sm-6">
+                    
+                        <h3>Already registered?</h3>
+                        <form id="form2" name="form2" action="#" method="post">
+
+                          <label for="user name">User name</label>
+                         
+                          <input type="text" name="username" class="form-control" id='un' size="30" style="width: 350px"  placeholder="enter user name" required>
+                          
+                          <label for="password">Password</label>
+                          <input name="password"  type="password" class="form-control" id='pwd' size="30" style="width: 350px" placeholder="enter user name" required>
+                          
+                      
+                          <br><br> <button id="form2_btn" class="btn btn-success" onclick=" return gohome()"> Sign in</button>
+
+                        </form>
+                        <br><br><br>
+                </div>
+        </div>
+      </div>
+
+
+<style type="text/css">
+  .navbar {
+    color: #FFFFFF;
+    background-color: #660000;
+}
+
+</style>
+
+</body>
+</html>
