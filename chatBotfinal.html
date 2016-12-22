@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+  <style type="text/css">
+      
+              .boxed 
+              {
+                border: 10px solid #660000 ;
+                padding: 2%;
+              }
+
+
+
+              .navbar 
+              {
+                color: #FFFFFF;
+                background-color: #660000;
+                margin-top: -15px;
+              }
+
+
+
+              #k
+               {
+                float:left;
+                padding:10px;
+                color:#fff;
+
+                /* default background for browsers without gradient support */
+                background:#075698; 
+                background:-webkit-gradient(linear, 0 0, 0 100%);
+                background:-moz-linear-gradient(#2e88c4, #075698);
+                background:-o-linear-gradient(#2e88c4, #075698);
+                background:linear-gradient(#2e88c4, #075698);
+                -webkit-border-radius:10px;
+                -moz-border-radius:10px;
+                border-radius:10px; 
+              }
+          
+
+
+
+              .triangle-isosceles 
+              {
+                position:relative;
+                padding:15px;
+                margin:1em 0 3em;
+                color:#000;
+                background:#f3961c; /* default background for browsers without gradient support */
+                /* css3 */
+                background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+                background:-moz-linear-gradient(#f9d835, #f3961c);
+                background:-o-linear-gradient(#f9d835, #f3961c);
+                background:linear-gradient(#f9d835, #f3961c);
+                -webkit-border-radius:10px;
+                -moz-border-radius:10px;
+                border-radius:10px;
+              }
+
+
+
+              /* Variant : for top positioned triangle
+              ------------------------------------------ */
+
+              .triangle-isosceles.top 
+              {
+                background:-webkit-gradient(linear, 0 0, 0 100%, from(#f3961c), to(#f9d835));
+                background:-moz-linear-gradient(#f3961c, #f9d835);
+                background:-o-linear-gradient(#f3961c, #f9d835);
+                background:linear-gradient(#f3961c, #f9d835);
+              }
+
+
+
+
+              /* Variant : for left/right positioned triangle
+              ------------------------------------------ */
+
+              .triangle-isosceles.left
+              {
+                margin-left:5%;   /*box shift to the left side*/
+                background:#D7BDE2;
+                margin-right: 30%;  /*for box*/
+                padding-left: 5%;  /*for text*/
+              }
+
+
+
+
+              /* Variant : for right positioned triangle
+              ------------------------------------------ */
+
+              .triangle-isosceles.right
+              {
+                margin-right:5%;      /*box shift to the right side*/
+                background:#85C1E9;
+                margin-left: 30%;  /*for box*/
+                padding-right: 5%;  /*for text*/
+              }
+
+
+
+
+                /* THE TRIANGLE
+              --------------------------------- */
+
+              /* creates triangle */
+              .triangle-isosceles:after
+               {
+                content:"";
+                position:absolute;
+                bottom:-15px; /* value = - border-top-width - border-bottom-width */
+                left:50px; /* controls horizontal position */
+                border-width:1% 1% 0; /* vary these values to change the angle of the vertex */
+                border-style:solid;
+                border-color:#f3961c transparent;
+                /* reduce the damage in FF3.0 */
+                display:block;
+                width:0;
+              }
+
+
+
+
+
+                /* Variant : top
+                ------------------------------------------ */
+
+                .triangle-isosceles.top:after 
+                {
+                  top:-15px; /* value = - border-top-width - border-bottom-width */
+                  right:50px; /* controls horizontal position */
+                  bottom:auto;
+                  left:auto;
+                  border-width:0 1% 1% /* vary these values to change the angle of the vertex */
+                  border-color:#f3961c transparent;
+                }
+
+
+
+
+
+                  /* Variant : left
+                  ------------------------------------------ */
+
+                  .triangle-isosceles.left:after 
+                  {
+                    top:16px; /* controls vertical position */
+                    left:-50px; /* value = - border-left-width - border-right-width */
+                    bottom:auto;
+                    border-width:10px 50px 10px 0;
+                    border-color:transparent #D7BDE2;   ;
+                  }
+
+
+
+
+
+
+                  /* Variant : right
+                  ------------------------------------------ */
+
+                  .triangle-isosceles.right:after 
+                  {
+                    top:16px; /* controls vertical position */
+                    right:-50px; /* value = - border-left-width - border-right-width */
+                    bottom:auto;
+                    left:auto;
+                    border-width:10px 0 10px 50px;
+                    border-color:transparent #85C1E9;
+                  }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <!-- box for entire page -->
+    <div class="boxed">
+
+       
+       <!-- navbar -->
+
+        <div class="body-wrap">
+        <div class="container">
+          <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+
+                <div class="navbar-brand"> </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">BotChat History</a></li>
+                </ul>
+
+               </div>
+
+               <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a href="login.html"><span class="glyphicon glyphicon-log-out"></span> Logout </a>
+                  </li>
+               </ul>
+
+           </div> 
+         </nav>
+       </div>
+     </div>
+     <!-- navbar end -->
+
+
+   
+
+   <div ng-app="myApp" ng-controller="customersCtrl"> 
+
+        <div ng-repeat="records in myData">
+
+          <div class="triangle-isosceles right" ng-if="records.from=='Lin'" > <h4> {{records.text}} </h4>
+
+          <div ng-if="records.from=='Lin'">  from:{{records.from}} </div>
+
+        <div ng-if="records.from=='Lin'" > TimeStamp : {{records.timeStamp|date:'dd-MM-yyyy HH:mm:ss Z'}} 
+       
+
+      </div>
+       
+
+
+
+        <div ng-if="records.responseType=='0' || records.responseType=='1'" >ResponseType:-Text Bubble
+          </div>
+          <div ng-if="records.responseType=='2'" > ResponseType:-Image Bubble </div>
+          <div ng-if="records.responseType=='3'" >ResponseType:-Audio Bubble  </div>
+        </div>
+      
+
+
+       
+      <div class="triangle-isosceles right "   ng-repeat="records in records.answers">
+         <div> <h4> {{records.text}} </h4> </div>
+      </div> 
+
+
+
+
+      <div class="triangle-isosceles left " ng-if="records.from=='User'"> <h4> {{records.text}} </h4>
+
+          <div ng-if="records.from=='User'"> from:{{records.from}} </div>
+
+        <div ng-if="records.from=='User'"> TimeStamp : {{records.timeStamp|date:'dd-MM-yyyy HH:mm:ss Z'}} </div>
+
+
+          <div data-ng-if="records.responseType=='0' || records.responseType=='1'" >ResponseType:-Text Bubble
+          </div>
+          <div data-ng-if="records.responseType=='2'" >ResponseType:-Image Bubble </div>
+          <div data-ng-if="records.responseType=='3'" >ResponseType:-Audio Bubble </div>
+
+      </div> 
+      <br>
+        
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+      $http.get("botchat.json").then(function (response) {
+          $scope.myData = response.data.botSession.chatConversations;      
+  });
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+	padding-top: 30px;
+	padding-bottom: 60px;
+	color: black;
+}
+.subheader{
+	padding-top: 7px;
+	padding-bottom: 10px;
+}
+.rightheader{
+	text-align: right;
+}
+p{
+color: black;
+}
+h3{
+	color: red;
+}
+.page-content{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.page-content1{
+	text-align: center;
+}
+table{
+	text-align: center;
+	
+}
+.jumbotron{
+	text-align: center;
+}
+#button1{
+	float: left;
+
+}
+#button12{
+	float: left;
+	margin-left: 50px
+	
+}
+#button2{
+		float: right;
+}
+
